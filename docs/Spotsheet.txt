@@ -1,0 +1,10 @@
+Sound Design - Foley for MineBlower5
+
+- DisarmTone | Disarm mine sound. Sine wave beep followed by a square wave hit.
+- Forward.wav | Intermittent sounds from a synthesizer, looped, then edited with parametric equalizer.
+- Reverse.wav | Intermittent sounds from a synthesizer, looped, then edited with parametric equalizer.
+- Zap.mp3 | Oscillator put through an envelope controller, then layered with its reverse, pitched up, and given reverb.
+- Bang.mp3 |  Piano key compressed until it clipped, then layered with its reverse and given reverb.- TorpFire.mp3 | (Firing sound). - Raised gain on impact sound, compressed until it clipped, then applied LPF.
+- TorpedoRun.mp3 | Foley: rickety desk fan with low pass and pitch change, bubbles are same as dive sound- TorpedoLoad.mp3 | Foley: clanging a pan on my stovetop, low pass filter and slow down by .8x- Grounded.mp3 | 
+- Sinking.mp3 | Synth triangle wave with added echo and low pass. Background, same as dive.
+- Dive.wav | Peter gargling water, low pass filter and slowdown by 0.8x.
