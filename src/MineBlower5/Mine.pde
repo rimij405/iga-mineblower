@@ -112,7 +112,8 @@ class Mine
       mineSt = 2;                             // Make Mine disarmed
       inactiveTime = INACTIVE_MAX;
       fadeTime = FADE_MAX;                    // Start fading away
-      aud.safePlay(aud.disarmSnd, loc.x);
+      aud.triggerDisarmTone();
+      // aud.safePlay(aud.disarmSnd, loc.x);
       aud.safePlay(aud.disarmStinger);
       sc.disarmed();
     }

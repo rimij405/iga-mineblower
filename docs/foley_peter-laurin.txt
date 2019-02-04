@@ -1,0 +1,7 @@
+Dive sound - Foley: me gargling water, low pass filter and slowdown by .8x
+
+Sinking - Synth & Foley: beep is synth triangle wave with added echo and low pass, background is same as dive sound
+
+Torpedo Loading - Foley: clanging a pan on my stovetop, low pass filter and slow down by .8x
+
+Torpedo Running - Foley: rickety desk fan with low pass and pitch change, bubbles are same as dive sound

@@ -46,7 +46,7 @@ class Audio
 {
   // AudioPlayers for simple Foley sounds & musical cues (single files)
   AudioPlayer bangSnd;       // Foley for explosion
-  AudioPlayer disarmSnd;     // Foley for disarming a mine
+  // AudioPlayer disarmSnd;     // Foley for disarming a mine
   AudioPlayer zapSnd;        // Foley for eel zap
   AudioPlayer groundSnd;     // Foley for torpedo grounding an eel  
   AudioPlayer forwardSnd;    // Looping Foley while right arrow pressed
@@ -93,17 +93,17 @@ class Audio
   void loadAudio()    // Called in setup()
   {
     bangSnd = minim.loadFile("Audio/Bang.mp3", 512);
-    disarmSnd = minim.loadFile("Audio/Disarm.mp3", 512);
-    disarmSnd.setGain(-8.0);                      // Turn it down
+    // disarmSnd = minim.loadFile("Audio/Disarm.mp3", 512);
+    // disarmSnd.setGain(-8.0);                      // Turn it down
     zapSnd = minim.loadFile("Audio/Zap.mp3", 512);
     zapSnd.setGain(-6.0);
     groundSnd = minim.loadFile("Audio/Grounded.mp3", 512);
     forwardSnd = minim.loadFile("Audio/Forward.wav", 512);
-    forwardSnd.setGain(-15.0);
+    forwardSnd.setGain(-5.0);
     reverseSnd = minim.loadFile("Audio/Reverse.wav", 512);
-    reverseSnd.setGain(-15.0);
+    reverseSnd.setGain(-5.0);
     diveSnd = minim.loadFile("Audio/Dive.wav", 512);
-    diveSnd.setGain(-12.0);
+    diveSnd.setGain(-5.0);
     tooLeftSnd = minim.loadFile("Audio/TooLeft.mp3", 512);
     tooRightSnd = minim.loadFile("Audio/TooRight.mp3", 512);
     tooUpSnd = minim.loadFile("Audio/TooUp.mp3", 512);
@@ -156,7 +156,7 @@ class Audio
   void pauseAll()  // Called when user types 'q' to quit
   {    
     bangSnd.pause();
-    disarmSnd.pause();
+    // disarmSnd.pause();
     zapSnd.pause();
     groundSnd.pause();
     forwardSnd.pause();
@@ -187,7 +187,7 @@ class Audio
   void closeAll()  // Called from stop() in main
   {
     bangSnd.close();
-    disarmSnd.close();
+    // disarmSnd.close();
     zapSnd.close();
     groundSnd.close();
     forwardSnd.close();
@@ -277,6 +277,17 @@ class Audio
   void tooFarDown(float subX)
   {
     safePlay(tooDownSnd, constrain(subX, 0, width)); // Pan to x coord
+  }
+  
+  /****** triggerDisarmTone() ***************************************************/
+  
+  // Maybe generate an ambient ping - Creates new PingTone object each time
+  // it decides to start a ping echo chain so that more than one can play
+  // at the same time. Uses class attribute pingCount. Called from Main tab.
+  void triggerDisarmTone()
+  {
+      DisarmTone dt = new DisarmTone();   // Create a PingTone Instrument
+      dt.noteOn();                    // Send it a noteOn signal
   }
   
   /****** maybePing() ***************************************************/
