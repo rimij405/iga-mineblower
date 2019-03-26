@@ -129,7 +129,7 @@ class Audio
 
     out = minim.getLineOut();          // Used for PingTone unit generators
     
-    bkgdMus = new CrossFade("Audio/JukeBox/Backgnd", "mp3", 6);
+    bkgdMus = new CrossFade("Audio/JukeBox/Backgnd", "wav", 6);
     // Note: Change "mp3" to "wav" if using wav files, which loop seamlessly
 
     ambSub = new MultiSound("Audio/AmbientSub/Snd", "mp3", 4);
