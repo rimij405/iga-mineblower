@@ -57,6 +57,7 @@ class MultiSound
       snds[i] = minim.loadFile(filePath, 512);
       gains[i] = float(gainAra[i]);
       snds[i].setGain(gains[i]);
+      // println("MuSd", filePath, gains[i], i, gainAra.length);
     }
   }
 

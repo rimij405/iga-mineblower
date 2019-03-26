@@ -46,7 +46,7 @@ class Audio
 {
   // AudioPlayers for simple Foley sounds & musical cues (single files)
   AudioPlayer bangSnd;       // Foley for explosion
-  // AudioPlayer disarmSnd;     // Foley for disarming a mine
+  AudioPlayer disarmSnd;     // Foley for disarming a mine
   AudioPlayer zapSnd;        // Foley for eel zap
   AudioPlayer groundSnd;     // Foley for torpedo grounding an eel  
   AudioPlayer forwardSnd;    // Looping Foley while right arrow pressed
@@ -93,8 +93,9 @@ class Audio
   void loadAudio()    // Called in setup()
   {
     bangSnd = minim.loadFile("Audio/Bang.mp3", 512);
-    // disarmSnd = minim.loadFile("Audio/Disarm.mp3", 512);
-    // disarmSnd.setGain(-8.0);                      // Turn it down
+    bangSnd.setGain(-3.0);
+    disarmSnd = minim.loadFile("Audio/Disarm.mp3", 512);
+    disarmSnd.setGain(-14.0);                      // Turn it down
     zapSnd = minim.loadFile("Audio/Zap.mp3", 512);
     zapSnd.setGain(-6.0);
     groundSnd = minim.loadFile("Audio/Grounded.mp3", 512);
@@ -121,7 +122,7 @@ class Audio
     torpRunSnd = minim.loadFile("Audio/TorpRun.mp3", 512);
     torpRunSnd.setGain(-3.0);
     disarmStinger = minim.loadFile("Audio/DisarmSting.mp3");
-    disarmStinger.setGain(-10.0);
+    disarmStinger.setGain(-12.0);
     explodeStinger = minim.loadFile("Audio/ExplodeSting.mp3", 512);
     explodeStinger.setGain(-12.0);
     depChgCue = minim.loadFile("Audio/DepthChgCue.mp3", 512);
@@ -132,10 +133,10 @@ class Audio
     bkgdMus = new CrossFade("Audio/JukeBox/Backgnd", "wav", 6);
     // Note: Change "mp3" to "wav" if using wav files, which loop seamlessly
 
-    ambSub = new MultiSound("Audio/AmbientSub/Snd", "mp3", 4);
+    ambSub = new MultiSound("Audio/AmbientSub/Snd", "mp3", 5);
     
     // Looping Horizontal Resequencing cue accompanies Yellow Sub scene
-    yelSub = new HorReSeq("Audio/YellowSub/YelSub", "wav", 5, true);
+    yelSub = new HorReSeq("Audio/YellowSub/YelSub", "wav", 4, true);
     
     // Non-looping Horizontal Resequencing object handles torpedo dialog
     torpDialog = new HorReSeq("Audio/TorpDialog/TorpLine", "mp3", 8, false);
@@ -150,13 +151,13 @@ class Audio
     
     // Set up the ring modulator with the file as carrier, modulating
     // frequency of 500 Hz, modulating amplitude (depth) of 2.0.
-    rF1 = new RingFile("Audio/RingFeed.mp3", 500, 2.0);
+    rF1 = new RingFile("Audio/RingFeed.mp3", 600, 2.2);
   }
 
   void pauseAll()  // Called when user types 'q' to quit
   {    
     bangSnd.pause();
-    // disarmSnd.pause();
+    disarmSnd.pause();
     zapSnd.pause();
     groundSnd.pause();
     forwardSnd.pause();
@@ -187,7 +188,7 @@ class Audio
   void closeAll()  // Called from stop() in main
   {
     bangSnd.close();
-    // disarmSnd.close();
+    disarmSnd.close();
     zapSnd.close();
     groundSnd.close();
     forwardSnd.close();

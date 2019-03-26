@@ -23,7 +23,7 @@ class CrossFade
   float [] leng;         // Length of each track in ms (not used currently)
   int currTrk = -1;      // Offset in array of currently playing sound
   int nextTrk = -1;      // Offset of next track to play (-1 => none)
-  int fadeTime = 500;    // Crossfades will take this many milliseconds
+  int fadeTime = 800;    // Crossfades will take this many milliseconds
   float silent = -70.0;  // Inaudible gain level
   boolean ducked = false;
 
@@ -63,7 +63,7 @@ class CrossFade
       snds[i] = minim.loadFile(filePath, 512);
       gains[i] = float(gainAra[i]);            // Convert to gain level
       leng[i] = snds[i].length();
-      //println(filePath, leng[i], gains[i]);
+      // println("CrossFd", filePath, gains[i], i, gainAra.length);
     }
   }
   

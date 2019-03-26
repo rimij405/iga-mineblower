@@ -25,7 +25,7 @@ class VertReMix
   AudioPlayer [] snds;    // The sounds (tracks) in to be mixed
   float [] gains;         // Gain level of each track in the snds array
   float inaudLev = -70.0; // Inaudible level
-  int fadeTime = 100;     // Pot up/down in 100 ms
+  int fadeTime = 300;     // Pot up/down in 300 ms
 
   // Constructor needs path & number of sound files
   // The dirPath should be a folder name followed by a slash followed
@@ -56,7 +56,7 @@ class VertReMix
       String filePath = dirPath + i + "." + ext;
       snds[i] = minim.loadFile(filePath, 512);
       gains[i] = float(gainAra[i]);
-      //println(filePath, leng[i]);
+      // println("VeReMx", filePath, gains[i], i, gainAra.length);
     }
   }
   

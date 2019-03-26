@@ -58,7 +58,7 @@ class HorReSeq
       snds[i] = minim.loadFile(filePath, 512);
       gains[i] = float(gainAra[i]);
       snds[i].setGain(gains[i]);
-      //println(filePath, looping);
+      // println("HoReSq", filePath, gains[i], i, gainAra.length);
     }
   }
 
