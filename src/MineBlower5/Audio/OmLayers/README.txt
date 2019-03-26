@@ -2,4 +2,4 @@ Ominous Layers tracks used in a Vertical Remixing object to build an ominous cho
 
 OmLayerGains.txt contains the gain levels for each file that will be ramped up to or down from.
 
-Note: wav files are used instead of mp3s to allow seamless looping.  Files must be stereo to support panning.
+Note: wav files are used instead of mp3s to allow seamless looping.

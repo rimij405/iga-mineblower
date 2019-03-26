@@ -2,4 +2,4 @@ ZapLoop tracks used in a Vertical Remixing object to play a 2-bar loop of annoyi
 
 ZapLoopGains.txt contains the gain levels for each of the corresponding .wav files.  Use .wav files when the loop must be precise, as .mp3 files have a gap of silence due to the Fourier windowing done in performing the perceptually based codec.
 
-If you change the number of loop files, be sure and change the number of files parameter to the constructor, when the zapLayers object is instantiated in the Au.pde source file, and adjust the number of lines in ZapLoopGains.txt to match.
+If you change the number of loop files, be sure and change the number of files parameter to the constructor, when the zapLayers object is instantiated in the Audio.pde source file, and adjust the number of lines in ZapLoopGains.txt to match.
